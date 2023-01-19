@@ -1,39 +1,39 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "imagen_carrusel": "/img/imagen3.png",
         "imagen_detail": "/img/imagen.png",
         "titulo": "PRIMERO",
         "descripcion": "Descripcion del producto con el nombre PRIMERO",
         "especificaciones" : "Estas son las especificaciones:",
         "precio": "1500",
-        "stock": "54",
+        "stock": 54,
         "cantidad": "1",
         "categoria": "PRIMERO"
     }, 
     
     {
-        "id": "2",
+        "id": 2,
         "imagen_carrusel": "/img/imagen3.png",
         "imagen_detail": "/img/imagen.png",
         "titulo": "SEGUNDO",
         "descripcion": "Descripcion del producto con el nombre PRIMERO",
         "especificaciones" : "Estas son las especificaciones:",
         "precio": "1500",
-        "stock": "54",
+        "stock": 54,
         "cantidad": "1",
         "categoria": "SEGUNDO"
     }, 
     
     {
-        "id": "3",
+        "id": 3,
         "imagen_carrusel": "/img/imagen3.png",
         "imagen_detail": "/img/imagen.png",
         "titulo": "TERCERO",
         "descripcion": "Descripcion del producto con el nombre TERCERO",
         "especificaciones" : "Estas son las especificaciones:",
         "precio": "1500",
-        "stock": "54",
+        "stock": 54,
         "cantidad": "1",
         "categoria": "SEGUNDO"
     }

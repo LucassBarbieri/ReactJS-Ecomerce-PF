@@ -15,16 +15,16 @@ const ItemList = ({ productos }) => {
 
         <div className="carousel-inner">
 
-          {productos.map((i) => (<Item
-            key={i.id}
-            id={i.id}
-            titulo={i.titulo}
-            descripcion={i.descripcion}
-            especificaciones={i.especificaciones}
-            imagen_carrusel={i.imagen_carrusel}
-            imagen_detail={i.imagen_detail}
-            precio={i.precio}
-            stock={i.stock}
+          {productos.map((item) => (<Item
+            key={item.id}
+            id={item.id}
+            titulo={item.titulo}
+            descripcion={item.descripcion}
+            especificaciones={item.especificaciones}
+            imagen_carrusel={item.imagen_carrusel}
+            imagen_detail={item.imagen_detail}
+            precio={item.precio}
+            stock={item.stock}
           />))}
 
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -40,7 +40,7 @@ const ItemList = ({ productos }) => {
         </div>
 
       </div>
-      
+
     </div>
 
 

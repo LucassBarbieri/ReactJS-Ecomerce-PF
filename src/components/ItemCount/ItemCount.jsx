@@ -1,35 +1,38 @@
 import React, { useState } from 'react'
 
-function ItemCount(stock) {
-    
-    const {initialValue, addCarrito, item} = stock;
-    const {count, setCount} = useState(initialValue);
-    const {stock} = item
+function ItemCount({ props }) {
 
-    const sumar = () => {
-        if (count < stock){
-            setCount(count + 1)
-        }
-    }
+    const { stock, cantidad, handleAgregar, handleRestar } = props;
 
-    const restar = () => {
-        if (count > 1) {
-            setCount(count - 1)
-        }
-    }
+    const { initialValue, addCarrito, item } = props;
+    const { count, setCount } = useState(initialValue);
+    // const { stock } = item
+
+    // const handleAgregar = () => {
+    //     if (count < stock) {
+    //         setCount(count + 1)
+    //     }
+    // }
+
+    // const handleRestar = () => {
+    //     if (count > 1) {
+    //         setCount(count - 1)
+    //     }
+    // }
 
     const producto = {
         ...item,
-        cantidad:count
+        cantidad: count
     }
 
     return (
         <div>
-            <button onClick={sumar}>Sumar</button>
-            <button onClick={restar}>Restar</button>
-            <button onClick={()=> addCarrito(producto)}>Agregar al carrito</button>
+            <p>Stock: {stock}</p>
+            <p>Cantidad Seleccionada: {cantidad}</p>
+            <button onClick={handleRestar}>-</button>
+            <button onClick={handleAgregar}>+</button>
         </div>
-    )
+    );
 }
 
-export default ItemCount
+export default ItemCount;

@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ productos }) => {
+
+  const { item } = productos;
+  const [cantidad, setCantidad] = useState(0);
+
+  function handleAgregar() {
+    setCantidad(cantidad + 1);
+  }
+
+  function handleRestar() {
+    if (cantidad > 0) {
+      setCantidad(cantidad - 1);
+    }
+  }
+
   return (
     <section className="bg-ligth">
       <div className="container pb-5">
@@ -26,8 +41,10 @@ const ItemDetail = ({ productos }) => {
                   <li>{productos.especificaciones}</li>
                 </ul>
                 <ul className="list-unstyled pb-3">
+                  <ItemCount stock={item.stock} cantidad={cantidad} handleAgregar={handleAgregar} handleRestar={handleRestar} />
+
                   {/* <button onClick={() => addCarrito(productos)}>Carrito</button> */}
-                  
+
                 </ul>
               </div>
             </div>
@@ -38,4 +55,4 @@ const ItemDetail = ({ productos }) => {
   );
 };
 
-export default ItemDetail
+export default ItemDetail;

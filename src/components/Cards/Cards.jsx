@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import ItemCount from '../ItemCount/ItemCount'
 
 const Cards = ({ id, imagen_carrusel, imagen_detail, titulo, descripcion, especificaciones, precio, stock }) => {
     
@@ -11,10 +10,9 @@ const Cards = ({ id, imagen_carrusel, imagen_detail, titulo, descripcion, especi
                 <h5>{titulo}</h5>
                 <p>{descripcion}</p>
                 <p><Link className="btn btn-primary" to={`/item/${id}`}>ADQUIRIR</Link></p>
-                <p><ItemCount/></p>
             </div>
         </div>
     )
 }
 
-export default Cards
+export default Cards;
