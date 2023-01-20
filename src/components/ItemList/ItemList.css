@@ -1,0 +1,11 @@
+.conteinercard {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 1rem;
+    gap: 1rem;
+}

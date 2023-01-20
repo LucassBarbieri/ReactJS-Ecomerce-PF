@@ -7,8 +7,7 @@
         "descripcion": "Descripcion del producto con el nombre PRIMERO",
         "especificaciones" : "Estas son las especificaciones:",
         "price": 1500,
-        "stock": "54",
-        "cantidad": "1",
+        "stock": 4,
         "categoria": "PRIMERO"
     }, 
     
@@ -20,8 +19,7 @@
         "descripcion": "Descripcion del producto con el nombre PRIMERO",
         "especificaciones" : "Estas son las especificaciones:",
         "price": 1500,
-        "stock": "54",
-        "cantidad": "1",
+        "stock": "4",
         "categoria": "SEGUNDO"
     }, 
     
@@ -33,8 +31,19 @@
         "descripcion": "Descripcion del producto con el nombre TERCERO",
         "especificaciones" : "Estas son las especificaciones:",
         "price": 1500,
-        "stock": "54",
-        "cantidad": "1",
+        "stock": 4,
         "categoria": "SEGUNDO"
+    },
+
+    {
+        "id": "4",
+        "imagen_carrusel": "/img/imagen3.png",
+        "imagen_detail": "/img/imagen.png",
+        "titulo": "CUARTO",
+        "descripcion": "Descripcion del producto con el nombre CUARTO",
+        "especificaciones" : "Estas son las especificaciones:",
+        "price": 1500,
+        "stock": 4,
+        "categoria": "PRIMERO"
     }
 ]

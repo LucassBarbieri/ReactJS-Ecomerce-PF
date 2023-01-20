@@ -1,18 +1,18 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../Context/Context'
 
-function Cart() {
+const Cart = () => {
 
-  const { cart, getTotalPrice, getTotalItemCount } = useContext(CartContext)
+  const { cart, getTotalPrice, getItemTotalCount } = useContext(CartContext)
 
   return (
     <>
     <div>
       {cart.map(item =>
         <>
-        <p>{item.price}</p>
-        <p>total item carro {getTotalItemCount()}</p>
-        <p>precio total carro {getTotalPrice()}</p>
+        <p>precio unitario: ${item.price}</p>
+        <p>total item carro: {getItemTotalCount()}</p>
+        <p>precio total carro: ${getTotalPrice()}</p>
         </>
       )}
     </div>
@@ -21,4 +21,4 @@ function Cart() {
   )
 }
 
-export default Cart
+export default Cart;

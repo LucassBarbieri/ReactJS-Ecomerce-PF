@@ -36,7 +36,7 @@ const ItemDetail = ({ productos }) => {
                   <li>{productos.especificaciones}</li>
                 </ul>
                 <ul className="list-unstyled pb-3">
-                  <ItemCount onAddToCart={handleAddToCart} />
+                  <ItemCount onAddToCart={handleAddToCart} stock={productos.stock} initial={1}/>
                 </ul>
               </div>
             </div>

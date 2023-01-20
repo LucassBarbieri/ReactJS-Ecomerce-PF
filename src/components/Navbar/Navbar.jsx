@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useContext } from "react"
+import { CartContext } from '../Context/Context';
+import { NavLink } from "react-router-dom"
 import '../Navbar/Navbar.css';
 
-import { NavLink } from "react-router-dom"
-
 export const Navbar = () => {
-  return (
 
+  const { contador } = useContext(CartContext);
+
+  return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <h1 className="navbar-brand">SHOP ONLINE</h1>
@@ -18,17 +20,16 @@ export const Navbar = () => {
               <NavLink className="nav-link active" to='/'>Inicio</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link active" to='/checkout'>Checkout</NavLink>
+              <NavLink className="nav-link active" to='/cart'>Carrito ({contador})</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link active" to='/cart'>Carrito (-)</NavLink>
+              <NavLink className="nav-link active" to='/checkout'>Checkout</NavLink>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    
   )
 }
 
-export default Navbar
+export default Navbar;
