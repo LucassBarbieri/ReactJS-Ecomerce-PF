@@ -18,13 +18,15 @@ function App() {
         <Routes>
           <Route path="/" element={<ItemListConteiner />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/categoria/:id" element={<ItemListConteiner />} />
+          <Route path="/productos" element={<ItemListConteiner />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/productos" element={<ItemListConteiner />} />
+
         </Routes>
       </Router>
     </CartProvider>
   );
 }
 
-export default App;
+export default App;

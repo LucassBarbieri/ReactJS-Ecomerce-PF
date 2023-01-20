@@ -1,0 +1,12 @@
+.cardDetailSize {
+    width: 60%;
+}
+
+.container-cardDetail { 
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+}

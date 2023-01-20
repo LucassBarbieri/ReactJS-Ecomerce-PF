@@ -1,14 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/Context';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ productos }) => {
 
-  const { addToCart, getTotalPrice, getItemTotalCount } = useContext(CartContext);
-
+  const { addToCart, getTotalPrice, getItemTotalCount, getQuantity } = useContext(CartContext);
+  const [purchase, setPurchase] = useState(false)
   const handleAddToCart = (count) => {
     addToCart(productos, count);
+    setPurchase(true)
   }
 
   return (
@@ -26,8 +27,7 @@ const ItemDetail = ({ productos }) => {
                 <h2>{productos.titulo}</h2>
                 <p>$ {productos.price} </p>
                 <p>Codigo COD#0{productos.id}</p>
-                <p>stock {productos.stock} </p>
-
+                {productos.stock && <p>stock {productos?.stock - getQuantity(productos)} </p>}
                 <h6>Description</h6>
                 <p>{productos.descripcion}
                 </p>
@@ -36,7 +36,7 @@ const ItemDetail = ({ productos }) => {
                   <li>{productos.especificaciones}</li>
                 </ul>
                 <ul className="list-unstyled pb-3">
-                  <ItemCount onAddToCart={handleAddToCart} stock={productos.stock} initial={1}/>
+                  {!purchase && <ItemCount onAddToCart={handleAddToCart} stock={productos.stock - getQuantity(productos)} initial={1} />}
                 </ul>
               </div>
             </div>
@@ -53,6 +53,7 @@ const ItemDetail = ({ productos }) => {
         </ul>
       </div>
     </section>
+
   );
 };
 

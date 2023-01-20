@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
   const [productos, setProductos] = useState({})
   useEffect(() => {
     getProducts().then((res) => setProductos(res.find(item => item.id === id)))
-  }, [])
+  }, [id])
 
   return (
     <>

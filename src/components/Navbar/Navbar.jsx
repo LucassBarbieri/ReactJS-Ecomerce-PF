@@ -20,6 +20,12 @@ export const Navbar = () => {
               <NavLink className="nav-link active" to='/'>Inicio</NavLink>
             </li>
             <li className="nav-item">
+              <NavLink className="nav-link active" to='/categoria/PRIMERO'>Primero</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link active" to='/categoria/SEGUNDO'>Segundo</NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink className="nav-link active" to='/cart'>Carrito ({contador})</NavLink>
             </li>
             <li className="nav-item">
@@ -32,4 +38,4 @@ export const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default Navbar;

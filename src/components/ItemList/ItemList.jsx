@@ -6,13 +6,8 @@ import Carrusel from '../Carrusel/Carrusel';
 const ItemList = ({ productos }) => {
   return (
     <>
-      {/* <Carrusel/> */}
-      <div id="carouselExampleDark" class="carousel carousel-dark slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
+      <div id="carouselExampleDark" className="carousel slide" data-bs-ride="carousel">
+      <div className="carousel-inner">
         {productos.map((item) => (<Carrusel
           key={item.id}
           id={item.id}
@@ -24,6 +19,7 @@ const ItemList = ({ productos }) => {
           price={item.price}
           stock={item.stock}
         />))}
+        </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -53,4 +49,4 @@ const ItemList = ({ productos }) => {
 };
 
 
-export default ItemList
+export default ItemList;
