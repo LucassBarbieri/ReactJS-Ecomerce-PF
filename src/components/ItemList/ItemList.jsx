@@ -23,7 +23,7 @@ const ItemList = ({ productos }) => {
             especificaciones={item.especificaciones}
             imagen_carrusel={item.imagen_carrusel}
             imagen_detail={item.imagen_detail}
-            precio={item.precio}
+            price={item.price}
             stock={item.stock}
           />))}
 

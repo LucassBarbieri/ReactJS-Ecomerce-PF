@@ -1,19 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
+import { CartContext } from '../Context/Context';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ productos }) => {
 
-  const { item } = productos;
-  const [cantidad, setCantidad] = useState(0);
+  const { addToCart, getTotalPrice, getItemTotalCount } = useContext(CartContext);
 
-  function handleAgregar() {
-    setCantidad(cantidad + 1);
-  }
-
-  function handleRestar() {
-    if (cantidad > 0) {
-      setCantidad(cantidad - 1);
-    }
+  const handleAddToCart = (count) => {
+    addToCart(productos, count);
   }
 
   return (
@@ -29,7 +24,7 @@ const ItemDetail = ({ productos }) => {
             <div className="card">
               <div className="card-body">
                 <h2>{productos.titulo}</h2>
-                <p>$ {productos.precio} </p>
+                <p>$ {productos.price} </p>
                 <p>Codigo COD#0{productos.id}</p>
                 <p>stock {productos.stock} </p>
 
@@ -41,15 +36,21 @@ const ItemDetail = ({ productos }) => {
                   <li>{productos.especificaciones}</li>
                 </ul>
                 <ul className="list-unstyled pb-3">
-                  <ItemCount stock={item.stock} cantidad={cantidad} handleAgregar={handleAgregar} handleRestar={handleRestar} />
-
-                  {/* <button onClick={() => addCarrito(productos)}>Carrito</button> */}
-
+                  <ItemCount onAddToCart={handleAddToCart} />
                 </ul>
               </div>
             </div>
           </div>
         </div>
+        <ul className="list-unstyled pb-3">
+          <li>Precio total: {getTotalPrice()}</li>
+        </ul>
+        <ul className="list-unstyled pb-3">
+          <li>Items totales: {getItemTotalCount()}</li>
+        </ul>
+        <ul className="list-unstyled pb-3">
+          <Link to='/cart'><button>Ir al carrito</button></Link>
+        </ul>
       </div>
     </section>
   );
