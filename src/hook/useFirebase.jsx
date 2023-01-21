@@ -1,29 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { db } from '../firebase'
-import { collection, doc, getDocs, getDoc } from 'firebase/firestore'
+import { collection, doc, getDocs, getDoc, query, where } from 'firebase/firestore'
 
 export const useFirebase = () => {
 
-    const [ productos, setProductos ] = useState([]);
-    const { product, setProducto } = useState({});
+    const [productos, setProductos] = useState([]);
+    const [producto, setProducto] = useState({});
 
-    useEffect(() => {
-        getProducts()
-
-        return () => {
-
-        }
-    }, [])
-
-    useEffect(() => {
-
-    }, [productos])
-
-
-
-    const getProducts = async () => {
+    const getProducts = async (id) => {
         try {
-            const prodCol = collection(db, 'productos')
+            const prodCol = id ? query(collection(db, "productos"), where("categoria", "==", id)) : collection(db, 'productos')
             await getDocs(prodCol).then((snapshot) => {
                 if (snapshot.size === 0) {
                     console.log("Base de datos esta vacio")
@@ -45,7 +31,7 @@ export const useFirebase = () => {
             const document = doc(db, 'productos', id)
             const response = await getDoc(document)
             response.data()
-            setProducto({ id: response.id, ...response.data()})
+            setProducto({ id: response.id, ...response.data() })
 
 
         } catch (error) {
@@ -53,7 +39,7 @@ export const useFirebase = () => {
         }
     }
 
-    return { productos, getProducts, getProduct, product }
+    return { productos, getProducts, getProduct, producto }
 }
 
 export default useFirebase;

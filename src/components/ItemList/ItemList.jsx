@@ -2,13 +2,9 @@ import React from 'react'
 import Item from '../Item/Item'
 import '../ItemList/ItemList.css'
 import Carrusel from '../Carrusel/Carrusel';
-// import useFirebase from '../../hook/useFirebase';
 // import { Link } from 'react-router-dom';
 
-const ItemList = ({productos}) => {
-
-  // const { productos } = useFirebase()
-
+const ItemList = ({ productos }) => {
   return (
     <>
       {/* <div>
@@ -63,4 +59,4 @@ const ItemList = ({productos}) => {
 };
 
 
-export default ItemList;
+export default ItemList;
