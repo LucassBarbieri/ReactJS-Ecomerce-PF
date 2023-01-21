@@ -25,11 +25,11 @@ export const Navbar = () => {
             <li className="nav-item">
               <NavLink className="nav-link active" to='/categoria/SEGUNDO'>Segundo</NavLink>
             </li> */}
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li className="nav-item dropdown">
+              <div className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categorias
-              </a>
-              <ul class="dropdown-menu">
+              </div>
+              <ul className="dropdown-menu">
                 <NavLink className="nav-link active" to='/categoria/PRIMERO' >Primero</NavLink>
                 <NavLink className="nav-link active" to='/categoria/SEGUNDO'>Segundo</NavLink>
               </ul>

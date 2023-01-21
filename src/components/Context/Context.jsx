@@ -6,6 +6,7 @@ const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
     const [contador, setContador] = useState(0)
+    const [loading,setLoading] = useState(false)
 
     const isInCart = (id) => cart.find(item => item.id === id);
 
@@ -24,11 +25,13 @@ const CartProvider = ({ children }) => {
 
     const clearCart = () => {
         setCart([]);
+        setContador(0)
     }
 
     const removeItem = (idToRemove) => {
         let newCart = cart.filter((itemInCart) => itemInCart.id !== idToRemove);
         setCart(newCart);
+        setContador(0)
     }
 
     const getTotalPrice = () => {
@@ -54,7 +57,7 @@ const CartProvider = ({ children }) => {
 
     return (
         <>
-            <CartContext.Provider value={{ cart, addToCart, clearCart, removeItem, getTotalPrice, getItemTotalCount, contador, getQuantity }}>
+            <CartContext.Provider value={{ cart, addToCart, clearCart, removeItem, getTotalPrice, getItemTotalCount, contador, getQuantity, setLoading, loading }}>
                 {children}
             </CartContext.Provider>
         </>

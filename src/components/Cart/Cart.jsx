@@ -4,24 +4,26 @@ import { CartContext } from '../Context/Context'
 
 const Cart = () => {
 
-  const { cart, getTotalPrice, getItemTotalCount } = useContext(CartContext)
+  const { cart, getTotalPrice, getItemTotalCount, clearCart, removeItem  } = useContext(CartContext)
 
-  return (
+  return cart.length > 0 ? (
     <>
       <div>
         {cart.map(item =>
-          <>
+          <div key={item.id}>
             <p>titulo{item.titulo}</p>
             <p>descripcion: {item.descripcion}</p>
-            {/* <button>Eliminar</button> */}
-          </>
+            <button onClick={() => removeItem(item.id)} >borrar</button>
+          </div>
         )}
-
         <p>total item carro: {getItemTotalCount()}</p>
         <p>precio total carro: ${getTotalPrice()}</p>
-        <p><Link to={'/checkout'}>Comprar</Link></p>
+        <button onClick={clearCart}>Vaciar carrito</button>
+        <Link to={'/checkout'}>Comprar</Link>
       </div>
     </>
+  ) : (
+    <p>Carrito vacio</p>
   )
 }
 
