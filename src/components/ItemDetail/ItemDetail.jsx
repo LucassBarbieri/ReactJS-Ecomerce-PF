@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/Context';
 import ItemCount from '../ItemCount/ItemCount';
 
+
 const ItemDetail = ({ productos }) => {
 
   const { addToCart, getTotalPrice, getItemTotalCount, getQuantity } = useContext(CartContext);
+ 
   const [purchase, setPurchase] = useState(false)
   const handleAddToCart = (count) => {
     addToCart(productos, count);

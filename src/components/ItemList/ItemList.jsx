@@ -2,31 +2,45 @@ import React from 'react'
 import Item from '../Item/Item'
 import '../ItemList/ItemList.css'
 import Carrusel from '../Carrusel/Carrusel';
+import useFirebase from '../../hook/useFirebase';
+import { Link } from 'react-router-dom';
 
-const ItemList = ({ productos }) => {
+const ItemList = ({  }) => {
+
+  const { productos } = useFirebase()
+
   return (
     <>
+      <div>
+        <h1>Item list container</h1>
+        {productos.map(({ id, titulo }) => (
+          <Link to={`/item/${id}`}>
+            <h1>{titulo}</h1>
+          </Link>
+        ))}
+      </div>
+
       <div id="carouselExampleDark" className="carousel slide" data-bs-ride="carousel">
-      <div className="carousel-inner">
-        {productos.map((item) => (<Carrusel
-          key={item.id}
-          id={item.id}
-          titulo={item.titulo}
-          descripcion={item.descripcion}
-          especificaciones={item.especificaciones}
-          imagen_carrusel={item.imagen_carrusel}
-          imagen_detail={item.imagen_detail}
-          price={item.price}
-          stock={item.stock}
-        />))}
+        <div className="carousel-inner">
+          {productos.map((item) => (<Carrusel
+            key={item.id}
+            id={item.id}
+            titulo={item.titulo}
+            descripcion={item.descripcion}
+            especificaciones={item.especificaciones}
+            imagen_carrusel={item.imagen_carrusel}
+            imagen_detail={item.imagen_detail}
+            price={item.price}
+            stock={item.stock}
+          />))}
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
 
@@ -49,4 +63,4 @@ const ItemList = ({ productos }) => {
 };
 
 
-export default ItemList;
+export default ItemList;
