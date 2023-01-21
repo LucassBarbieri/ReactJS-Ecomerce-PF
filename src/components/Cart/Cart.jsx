@@ -8,18 +8,19 @@ const Cart = () => {
 
   return (
     <>
-    <div>
-      {cart.map(item =>
-        <>
-        <p>titulo{item.titulo}</p>
-        <p>descripcion: {item.descripcion}</p>
+      <div>
+        {cart.map(item =>
+          <>
+            <p>titulo{item.titulo}</p>
+            <p>descripcion: {item.descripcion}</p>
+            {/* <button>Eliminar</button> */}
+          </>
+        )}
+
         <p>total item carro: {getItemTotalCount()}</p>
         <p>precio total carro: ${getTotalPrice()}</p>
-        {/* <button>Eliminar</button> */}
-        <Link to={'/checkout'}>Comprar</Link>
-        </>
-      )}
-    </div>
+        <p><Link to={'/checkout'}>Comprar</Link></p>
+      </div>
     </>
   )
 }
