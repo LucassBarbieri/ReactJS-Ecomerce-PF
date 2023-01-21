@@ -2,23 +2,23 @@ import React from 'react'
 import Item from '../Item/Item'
 import '../ItemList/ItemList.css'
 import Carrusel from '../Carrusel/Carrusel';
-import useFirebase from '../../hook/useFirebase';
-import { Link } from 'react-router-dom';
+// import useFirebase from '../../hook/useFirebase';
+// import { Link } from 'react-router-dom';
 
-const ItemList = ({  }) => {
+const ItemList = ({productos}) => {
 
-  const { productos } = useFirebase()
+  // const { productos } = useFirebase()
 
   return (
     <>
-      <div>
+      {/* <div>
         <h1>Item list container</h1>
         {productos.map(({ id, titulo }) => (
           <Link to={`/item/${id}`}>
             <h1>{titulo}</h1>
           </Link>
         ))}
-      </div>
+      </div> */}
 
       <div id="carouselExampleDark" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">

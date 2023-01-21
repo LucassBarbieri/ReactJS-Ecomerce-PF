@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { getProducts } from '../../mock/data'
+// import { getProducts } from '../../hook/useFirebase'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import useFirebase from '../../hook/useFirebase'
+
 const ItemListConteiner = () => {
 
   const [productos, setProductos] = useState([])

@@ -4,8 +4,8 @@ import { collection, doc, getDocs, getDoc } from 'firebase/firestore'
 
 export const useFirebase = () => {
 
-    const [productos, setProductos] = useState([]);
-    const { producto, setProducto } = useState({});
+    const [ productos, setProductos ] = useState([]);
+    const { product, setProducto } = useState({});
 
     useEffect(() => {
         getProducts()
@@ -53,7 +53,7 @@ export const useFirebase = () => {
         }
     }
 
-    return { productos, getProducts, getProduct, producto }
+    return { productos, getProducts, getProduct, product }
 }
 
 export default useFirebase;

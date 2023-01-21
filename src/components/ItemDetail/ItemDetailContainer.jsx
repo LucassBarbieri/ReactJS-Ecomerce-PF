@@ -1,23 +1,32 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProducts } from '../../mock/data'
+import useFirebase from '../../hook/useFirebase'
 import ItemDetail from '../ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
 
-  const { id } = useParams();
-
-  const [productos, setProductos] = useState({})
+  const [product, getProduct] = useFirebase()
+  const { id } = useParams()
+  
   useEffect(() => {
-    getProducts().then((res) => setProductos(res.find(item => item.id === id)))
+    getProduct(id)
   }, [id])
+
+
+  // const { id } = useParams();
+
+  // const [productos, setProductos] = useState({})
+  // useEffect(() => {
+  //   getProducts().then((res) => setProductos(res.find(item => item.id === id)))
+  // }, [id])
 
   return (
     <>
-      <ItemDetail productos={productos} />
+      <ItemDetail productos={product} />
     </>
   )
 
 }
 
 export default ItemDetailContainer;
+

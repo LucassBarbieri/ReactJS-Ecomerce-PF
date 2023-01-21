@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import useFirebase from '../../hook/useFirebase'
+// import useFirebase from '../../hook/useFirebase'
 import '../Item/Item.css'
 
 const Item = ({ id, imagen_carrusel, imagen_detail, titulo, descripcion, especificaciones, price, stock }) => {
-    const { productos } = useFirebase()
+
     return (
         <>
             <div className="card card1">
