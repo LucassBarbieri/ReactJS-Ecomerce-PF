@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/Context';
 import ItemCount from '../ItemCount/ItemCount';
+import '../ItemDetail/ItemDetail.css'
 
 
 const ItemDetail = ({ productos }) => {
 
   const { addToCart, getTotalPrice, getItemTotalCount, getQuantity } = useContext(CartContext);
- 
+
   const [purchase, setPurchase] = useState(false)
   const handleAddToCart = (count) => {
     addToCart(productos, count);
@@ -28,12 +29,12 @@ const ItemDetail = ({ productos }) => {
               <div className="card-body">
                 <h2>{productos.titulo}</h2>
                 <p>$ {productos.price} </p>
-                <p>Codigo COD#0{productos.id}</p>
+                <p>Codigo: {productos.id}</p>
                 {productos.stock && <p>stock {productos?.stock - getQuantity(productos)} </p>}
-                <h6>Description</h6>
+                <h6>Description:</h6>
                 <p>{productos.descripcion}
                 </p>
-                <h6>Specification</h6>
+                <h6>Specification:</h6>
                 <ul className="list-unstyled pb-3">
                   <li>{productos.especificaciones}</li>
                 </ul>
@@ -44,19 +45,15 @@ const ItemDetail = ({ productos }) => {
             </div>
           </div>
         </div>
-        <ul className="list-unstyled pb-3">
-          <li>Precio total: {getTotalPrice()}</li>
-        </ul>
-        <ul className="list-unstyled pb-3">
-          <li>Items totales: {getItemTotalCount()}</li>
-        </ul>
-        <ul className="list-unstyled pb-3">
-          <Link to='/cart'><button>Ir al carrito</button></Link>
-        </ul>
+      </div>
+      <div className='container-total'>
+          <p>Precio total: $ {getTotalPrice()}</p>
+          <p>Items totales: {getItemTotalCount()}</p>
+          <p><Link to='/cart'><button className='botonesCount'>Ir al carrito</button></Link></p>
       </div>
     </section>
 
   );
 };
 
-export default ItemDetail;
+export default ItemDetail;

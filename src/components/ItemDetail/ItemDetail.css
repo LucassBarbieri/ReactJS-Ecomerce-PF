@@ -9,3 +9,13 @@
     flex-flow: row wrap;
     justify-content: center;
 }
+
+.container-total {
+    display: flex !important;
+    flex-flow: row wrap !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    align-content: center !important;
+    width: 100% !important;
+    height: auto !important;
+}

@@ -1,0 +1,33 @@
+.botonesCount-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+}
+
+.botonesCount {
+    background-color: orange;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0px;
+
+    margin: .5;
+}
+
+.botonesCount:hover {
+    background-color: orange;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0px;
+    box-shadow: 0px 0px 10px orange;
+    margin: .5;
+    color: black;
+}
+
+.count-title {
+    font-size: 1rem;
+}

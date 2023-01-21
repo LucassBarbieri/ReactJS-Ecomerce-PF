@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../ItemCount/ItemCount.css'
 
 const ItemCount = ({ initial, stock, onAddToCart }) => {
 
@@ -18,10 +19,12 @@ const ItemCount = ({ initial, stock, onAddToCart }) => {
 
     return (
         <>{stock > 0 ? <>
-            <h1>Cantidad: {count}</h1>
-            <button key={count >= 1} onClick={() => agregar()}>Agregar</button>
-            <button key={count} onClick={() => restar()}>Restar</button>
-            <button onClick={() => { onAddToCart(count); }}>Agregar al carrito</button>
+            <h1 className='count-title'>Cantidad: {count}</h1>
+            <div className='botonesCount-container'>
+                <button key={count >= 1} onClick={() => agregar()} className='botonesCount'><strong>Agregar</strong></button>
+                <button key={count} onClick={() => restar()} className='botonesCount'><strong>Restar</strong></button>
+                <button onClick={() => { onAddToCart(count); }} className='botonesCount'><strong>Agregar al carrito</strong></button>
+            </div>
         </>
             : <p>Lo sentimos no hay stock disponible</p>
         }
