@@ -1,22 +1,13 @@
 import React from 'react'
 import Item from '../Item/Item'
 import '../ItemList/ItemList.css'
-import Carrusel from '../Carrusel/Carrusel';
-// import { Link } from 'react-router-dom';
+// import Carrusel from '../Carrusel/Carrusel';
 
 const ItemList = ({ productos }) => {
   return (
     <>
-      {/* <div>
-        <h1>Item list container</h1>
-        {productos.map(({ id, titulo }) => (
-          <Link to={`/item/${id}`}>
-            <h1>{titulo}</h1>
-          </Link>
-        ))}
-      </div> */}
 
-      <div id="carouselExampleDark" className="carousel slide" data-bs-ride="carousel">
+      {/* <div id="carouselExampleDark" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           {productos.map((item) => (<Carrusel
             key={item.id}
@@ -28,7 +19,7 @@ const ItemList = ({ productos }) => {
             imagen_detail={item.imagen_detail}
             price={item.price}
             stock={item.stock}
-          />))}
+          />))};
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -38,8 +29,9 @@ const ItemList = ({ productos }) => {
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
-      </div>
-
+      </div> */}
+      
+      <div className='container-fluid'>
       <div className='conteinercard'>
         {productos.map((item) => (<Item
           key={item.id}
@@ -53,6 +45,8 @@ const ItemList = ({ productos }) => {
           stock={item.stock}
         />))}
       </div>
+      </div>
+      
     </>
 
   );

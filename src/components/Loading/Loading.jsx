@@ -7,7 +7,7 @@ const Loading = () => {
   return (
     <>
       <div className='container-loading'>
-          <Spinner color='warning' className='spinnerCircle'/>
+          <Spinner color='danger' className='spinnerCircle'/>
       </div>
     </>
   )

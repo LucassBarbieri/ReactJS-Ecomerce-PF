@@ -1,0 +1,35 @@
+.container-carritovac {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 80vh;
+}
+
+.text-carrito {
+    font-size: 3rem !important;
+}
+
+.cardcheck {
+    width: 18rem;
+}
+
+.containerCarritoNew {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+}
+
+.container-checkoutotal {
+    display: flex !important;
+    flex-flow: row wrap !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    align-content: center !important;
+    width: 100% !important;
+    height: 80px !important;  
+
+    margin: 1rem;
+}

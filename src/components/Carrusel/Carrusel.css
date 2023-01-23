@@ -2,3 +2,11 @@
     width: 100% !important;
     height: 100vh !important;
 }
+
+.carrusel-container {
+    height: 500px;
+}
+
+.carrusel-card {
+    height: 500px !important;
+}

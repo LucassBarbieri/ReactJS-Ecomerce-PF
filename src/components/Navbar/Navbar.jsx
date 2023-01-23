@@ -9,64 +9,59 @@ export const Navbar = () => {
 
   return (
     <>
-
-      <nav className="navbar-container navbar navbar-expand-lg ftco_navbar ftco-navbar-light">
-        <div className="container">
-          E-Commerce - PF
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="fa fa-bars"></span> Menu
-          </button>
-          <div className="collapse navbar-collapse">
-            <ul className="navbar-nav ml-auto mr-md-3">
-              <li className="nav-item active">
-                <NavLink className="nav-link active" to={'/'}>Inicio</NavLink>
-              </li>
-              <li className="dropdown nav-item d-md-flex align-items-center">
-                <div class="dropdown-toggle nav-link d-flex align-items-center justify-content-center p-0" id="dropdown04" data-toggle="dropdown" aria-expanded="false">
-                  Categorias
+      <section className="navegation">
+        <div className="container-fluid px-md-5">
+          <div className="row justify-content-between">
+            <div className="col-md-8 order-md-last">
+              <div className="row">
+                <div className="col-md-6 text-center">
+                  <NavLink className="navbar-brand" to={'/'}>E-Commerce  <span>Proyecto final: React JS</span></NavLink>
                 </div>
-                <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown04">
-                  <NavLink className="dropdown-item" to={'/categoria/PRIMERO'} >Primero</NavLink>
-                  <NavLink className="dropdown-item" to={'/categoria/SEGUNDO'}>Segundo</NavLink>
-                </div>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link active" to={'/cart'}>Carrito ({contador})</NavLink>
-              </li>
-            </ul>
+                {/* <div className="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
+                  <form action="#" className="searchform order-lg-last">
+                    <div className="form-group d-flex">
+                      <input type="text" className="form-control pl-3" placeholder="Search"/>
+                        <button type="submit" placeholder="" className="form-control search"><span className="fa fa-search"></span></button>
+                    </div>
+                  </form>
+                </div> */}
+              </div>
+            </div>
+            {/* <div className="col-md-4 d-flex">
+              <div className="social-media">
+                <p className="mb-0 d-flex">
+                  <a href="#" className="d-flex align-items-center justify-content-center"><span className="fa fa-facebook"><i className="sr-only">Facebook</i></span></a>
+                  <a href="#" className="d-flex align-items-center justify-content-center"><span className="fa fa-twitter"><i className="sr-only">Twitter</i></span></a>
+                  <a href="#" className="d-flex align-items-center justify-content-center"><span className="fa fa-instagram"><i className="sr-only">Instagram</i></span></a>
+                  <a href="#" className="d-flex align-items-center justify-content-center"><span className="fa fa-dribbble"><i className="sr-only">Dribbble</i></span></a>
+                </p>
+              </div>
+            </div> */}
           </div>
         </div>
-      </nav>
-
-
-
-      {/* <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <h1 className="navbar-brand">SHOP ONLINE</h1>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink className="nav-link active" to='/'>Inicio</NavLink>
-              </li>
-              <li className="nav-item dropdown">
-                <div className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categorias
-                </div>
-                <ul className="dropdown-menu">
-                  <NavLink className="nav-link active" to='/categoria/PRIMERO' >Primero</NavLink>
-                  <NavLink className="nav-link active" to='/categoria/SEGUNDO'>Segundo</NavLink>
-                </ul>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link active" to='/cart'>Carrito ({contador})</NavLink>
-              </li>
-            </ul>
+        <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+          <div className="container-fluid">
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="fa fa-bars"></span> Menu
+            </button>
+            <div className="collapse navbar-collapse" id="ftco-nav">
+              <ul className="navbar-nav m-auto">
+                <li className="nav-item active">
+                  <NavLink className="nav-link active" to={'/'}>Inicio</NavLink>
+                </li>
+                <li className="nav-item dropdown">
+                  <span className="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</span>
+                  <div className="dropdown-menu" aria-labelledby="dropdown04">
+                    <NavLink className="dropdown-item" to={'/categoria/producto'}>Productos</NavLink>
+                    <NavLink className="dropdown-item" to={'/categoria/servicio'}>Segundo</NavLink>
+                  </div>
+                </li>
+                <li className="nav-item"><NavLink className="nav-link active" to={'/cart'}>Carrito ({contador})</NavLink></li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav> */}
+        </nav>
+      </section>
     </>
   )
 }

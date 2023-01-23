@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../ItemCount/ItemCount.css'
+// import { Link } from 'react-router-dom';
 
 const ItemCount = ({ initial, stock, onAddToCart }) => {
 
@@ -19,14 +20,26 @@ const ItemCount = ({ initial, stock, onAddToCart }) => {
 
     return (
         <>{stock > 0 ? <>
-            <h1 className='count-title'>Cantidad: {count}</h1>
+
             <div className='botonesCount-container'>
-                <button key={count >= 1} onClick={() => agregar()} className='botonesCount'><strong>Agregar</strong></button>
-                <button key={count} onClick={() => restar()} className='botonesCount'><strong>Restar</strong></button>
-                <button onClick={() => { onAddToCart(count); }} className='botonesCount'><strong>Agregar al carrito</strong></button>
+                <button key={count >= 1} onClick={() => agregar()} className="btn btn-primary">
+                    <strong>+</strong>
+                </button>
+                <div className="btn btnCounterNumber text-uppercase">
+                    <strong>{count}</strong>
+                </div>
+                <button key={count} onClick={() => restar()} className="btn btn-primary">
+                    <strong>-</strong>
+                </button>
+                <button onClick={() => { onAddToCart(count); }} className="btn btnVermas">
+                    <strong>Agregar al carrito</strong>
+                </button>
             </div>
         </>
-            : <p>Lo sentimos no hay stock disponible</p>
+            :
+            <button className="btn btnVermas">
+                <strong>Sin stock actualmente</strong>
+            </button>
         }
         </>
     )

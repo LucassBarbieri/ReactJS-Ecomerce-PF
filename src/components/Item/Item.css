@@ -1,3 +1,42 @@
 .card1 {
     width: 15rem;
 }
+
+.btnContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 1rem;
+}
+
+.btnVermas {
+    background-color: #FF0714 !important;
+    color: white !important;
+}
+
+.btnVermasAgregar {
+    background-color: green !important;
+    color: white !important;
+}
+
+.btnVermasIrAlCarrito {
+    width: 100%;
+    background-color: green !important;
+    color: white !important;
+}
+
+.btnCounterNumber {
+    /* background-color: green !important; */
+    color: black !important;
+}
+
+.btn-primary {
+    border: 1rem !important;
+    display: flex !important;
+    flex-flow: row wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+}
